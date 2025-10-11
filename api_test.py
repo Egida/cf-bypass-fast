@@ -4,7 +4,7 @@ import httpx
 async def main():
     async with httpx.AsyncClient(timeout=30.0) as client:
         resp1 = await client.post(
-            "http://localhost:8080/cloudflare",
+            "http://localhost:7090/cloudflare",
             json={
                 "domain": "https://olamovies.watch/generate",
                 "mode": "iuam",
@@ -13,7 +13,7 @@ async def main():
         print(resp1.json())
 
         resp2 = await client.post(
-            "http://localhost:8080/cloudflare",
+            "http://localhost:7090/cloudflare",
             json={
                 "domain": "https://lksfy.com/",
                 "siteKey": "0x4AAAAAAA49NnPZwQijgRoi",
@@ -24,3 +24,4 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
